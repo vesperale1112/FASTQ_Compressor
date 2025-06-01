@@ -1,0 +1,24 @@
+[project]
+name = "fastq-compressor"
+version = "0.1.0"
+description = "A simple tool to compress FASTQ files and decompress them as well"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+  { name = "Xiran Wang" },
+  { name = "Yuanbi Wang" },
+  { name = "Wenhao Wang" }
+]
+# 列出运行时需要安装的依赖
+dependencies = [
+  "biopython>=1.78",
+  "numpy>=1.20"
+]
+
+[project.scripts]
+fastq-compress = "fastq_compressor.__main__:main"
+# 上面这一行会生成一个可执行脚本 `fastq-compress`，调用 fastq_compressor/__main__.py 里的 main()
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
